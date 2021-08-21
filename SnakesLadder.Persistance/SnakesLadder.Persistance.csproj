@@ -9,8 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SnakeLadder.Application\SnakeLadder.Application.csproj" />
+    <ProjectReference Include="..\SnakeLadder.Application\SnakesLadder.Application.csproj" />
     <ProjectReference Include="..\SnakesLadder.Domain\SnakesLadder.Domain.csproj" />
+    <ProjectReference Include="..\SnakesLadder.Infrastructure\SnakesLadder.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
