@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SnakesandLadder.Application
+namespace SnakesandLadder.Persistance
 {
     public class Board
     {
@@ -10,7 +10,7 @@ namespace SnakesandLadder.Application
         private Ladder[] ladderSet;
 
 
-        //Initialiso
+        //Initialisaton
 
         //method
         public Board()

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SnakesandLadder.Application.Models
+namespace SnakesandLadder.Persistance
 {
     class Player
     {

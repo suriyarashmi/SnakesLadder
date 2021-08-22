@@ -1,4 +1,4 @@
-﻿namespace SnakesandLadder.Application
+﻿namespace SnakesandLadder.Application.Models
 {
     class Ladder
     {
