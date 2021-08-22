@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SnakesandLadder.Application.Models
+namespace SnakesandLadder.Persistance
 {
     public class Dice
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SnakesandLadder.Application.Services
+namespace SnakesandLadder.Persistance
 {
     public class Game
     {
