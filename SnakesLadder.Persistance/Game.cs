@@ -1,10 +1,13 @@
-﻿using System;
+﻿using SnakesLadder.Persistance;
+using SnakesLadder.Persistance.Abstract;
+using SnakesLadder.Persistance.Repository;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace SnakesLadder.Persistance
 {
-    public class Game : GameBase
+    public class Game 
     {
         private const int GAME_TYPE1 = 1;//vs Human
 
@@ -14,14 +17,13 @@ namespace SnakesLadder.Persistance
 
 
         private Board board;
+        private Player[] players;
         private Player winner;
-
-
         private Dice dice;
-
-
         private int totalPlayer;
 
+        public Board B { get; }
+        public Dice D { get; }
 
         public Game(Board b, Dice d, int gameType)
         {
@@ -40,6 +42,12 @@ namespace SnakesLadder.Persistance
             this.playingTurn = 0;
         }
 
+        public Game(Board b, Player[] players, Dice d)
+        {
+            B = b;
+            this.players = players;
+            D = d;
+        }
 
         public void RunTheGame()
         {
@@ -47,8 +55,7 @@ namespace SnakesLadder.Persistance
             players[playingTurn].Move(this.dice);
             int pos = players[playingTurn].GetPosition();
 
-
-            Teleporter snakeLadder = board.GetTile(pos).GetSnakeLadder();
+   Teleportar snakeLadder = (Teleportar)board.GetTile(pos);
             if (snakeLadder != null)
             {
                 snakeLadder.MovePlayer(players[playingTurn]);
@@ -75,7 +82,10 @@ namespace SnakesLadder.Persistance
                 }
             }
         }
-
+        public void SetWinner(Player p)
+        {
+            this.winner = p;
+        }
         public Player GetWinner()
         {
             return winner;

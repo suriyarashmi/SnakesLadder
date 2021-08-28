@@ -1,33 +1,54 @@
 ﻿using SnakesLadder.Persistance.Repository;
 using System;
-using SnakesLadder.Application.Models;
-
+using SnakesLadder.Persistance.Models;
 namespace SnakesLadder.Persistance
 {
     public class Board
     {
         //Properties List
         private BoardPosition[] boardPosition;
-        private Application.Models.Snake[] snakeSet;
-        private Application.Models.Ladder[] ladderSet;
+        private Snake[] snakeSet;
+        private Ladder[] ladderSet;
 
+        public Snake[] Snakes
+        {
+            get
+            {
+                return snakeSet;
+            }
+            set
+            {
+                snakeSet = value;
+            }
+        }
+
+        public Ladder[] Ladders
+        {
+            get
+            {
+                return ladderSet;
+            }
+            set
+            {
+                ladderSet = value;
+            }
+        }
 
         //Initialisaton
-
         //method
         public Board()
         {
             this.boardPosition = new BoardPosition[100];
-            for (int i = 0; i <boardPosition.Length; i++)
+            for (int i = 0; i < boardPosition.Length; i++)
             {
                 boardPosition[i] = new BoardPosition(i);
             }
-            snakeSet = new Application.Models.Snake[8];
-            ladderSet = new Application.Models.Ladder[8];
+            snakeSet = new Snake[8];
+            ladderSet = new Ladder[8];
             GenerateBoard();
         }
 
-       
+
         private void GenerateBoard()
         {
             Random r = new Random();
@@ -61,24 +82,34 @@ namespace SnakesLadder.Persistance
                     count++;
                 }
             }
+
+            bool IsValidSnakeLadder(BoardPosition t1, BoardPosition t2)
+            {
+                if (t1.GetSnakeLadder() != null || t2.GetSnakeLadder() != null)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+
         }
 
-        internal object GetTile(int pos)
+        internal object GetTile(object num)
         {
             throw new NotImplementedException();
         }
 
-        private bool IsValidSnakeLadder(BoardPosition t1, BoardPosition t2)
+        private BoardPosition GetTile(int num)
         {
-            if (t1.GetSnakeLadder() != null || t2.GetSnakeLadder() != null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return boardPosition[num];
         }
 
+        private BoardPosition[] GetTiles()
+        {
+            return boardPosition;
+        }
     }
 }

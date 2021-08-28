@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SnakesLadder.Application\SnakesLadder.Application.csproj" />
-    <ProjectReference Include="..\SnakesLadder.Domain\SnakesLadder.Domain.csproj" />
   </ItemGroup>
 
 </Project>

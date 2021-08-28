@@ -1,5 +1,4 @@
 ﻿using SnakesLadder.Persistance.Abstract;
-using SnakesLadder.Application.Models;
 using System;
 
 namespace SnakesLadder.Persistance.Repository
