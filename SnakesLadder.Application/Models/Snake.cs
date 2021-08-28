@@ -1,6 +1,6 @@
-﻿namespace SnakesandLadder.Application.Models
+﻿namespace SnakesLadder.Application.Models
 {
-   class Snake
+   public class Snake
     {
         public Snake(int start, int end)
         {

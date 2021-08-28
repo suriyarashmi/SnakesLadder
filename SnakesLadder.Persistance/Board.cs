@@ -1,13 +1,15 @@
-﻿using System;
+﻿using SnakesLadder.Persistance.Repository;
+using System;
+using SnakesLadder.Application.Models;
 
-namespace SnakesandLadder.Persistance
+namespace SnakesLadder.Persistance
 {
     public class Board
     {
         //Properties List
         private BoardPosition[] boardPosition;
-        private Snake[] snakeSet;
-        private Ladder[] ladderSet;
+        private Application.Models.Snake[] snakeSet;
+        private Application.Models.Ladder[] ladderSet;
 
 
         //Initialisaton
@@ -20,12 +22,12 @@ namespace SnakesandLadder.Persistance
             {
                 boardPosition[i] = new BoardPosition(i);
             }
-            snakeSet = new Snake[8];
-            ladderSet = new Ladder[8];
+            snakeSet = new Application.Models.Snake[8];
+            ladderSet = new Application.Models.Ladder[8];
             GenerateBoard();
         }
 
-
+       
         private void GenerateBoard()
         {
             Random r = new Random();
@@ -60,6 +62,12 @@ namespace SnakesandLadder.Persistance
                 }
             }
         }
+
+        internal object GetTile(int pos)
+        {
+            throw new NotImplementedException();
+        }
+
         private bool IsValidSnakeLadder(BoardPosition t1, BoardPosition t2)
         {
             if (t1.GetSnakeLadder() != null || t2.GetSnakeLadder() != null)

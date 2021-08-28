@@ -16,9 +16,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2E036D9F-451C-4BB3-BE2B-6388844C8A4F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AcceptanceTests", "AcceptanceTests", "{B67D88AE-65FB-49EA-A957-12EC274E6B2E}"
-	ProjectSection(SolutionItems) = preProject
-		SnakesLadder.UnitTest\PlayGameTest.cs = SnakesLadder.UnitTest\PlayGameTest.cs
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationTests", "IntegrationTests", "{0EC23D7B-8FC5-4B42-A28A-7ED186263B62}"
 EndProject

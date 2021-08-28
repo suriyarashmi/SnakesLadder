@@ -1,11 +1,13 @@
-﻿using System;
+﻿using SnakesLadder.Persistance.Abstract;
+using SnakesLadder.Application.Models;
+using System;
 
-namespace SnakesandLadder.Persistance.Repository
+namespace SnakesLadder.Persistance.Repository
 {
     public class BoardPosition
     {
         private int number; //board number
-        private Teleporter isSnake, isLadder;
+        private Teleportar isSnake, isLadder;
 
 
         public BoardPosition(int num)
@@ -20,13 +22,13 @@ namespace SnakesandLadder.Persistance.Repository
         }
 
 
-        public void SetIsSnake(Teleporter isSnake)
+        public void SetIsSnake(Teleportar isSnake)
         {
             this.isSnake = isSnake;
         }
 
 
-        public void SetIsLadder(Teleporter isLadder)
+        public void SetIsLadder(Teleportar isLadder)
         {
             this.isLadder = isLadder;
         }
@@ -38,19 +40,19 @@ namespace SnakesandLadder.Persistance.Repository
         }
 
 
-        public Teleporter IsSnake()
+        public Teleportar IsSnake()
         {
             return this.isSnake;
         }
 
 
-        public Teleporter IsLadder()
+        public Teleportar IsLadder()
         {
             return this.isLadder;
         }
 
 
-        public Teleporter GetSnakeLadder()
+        public Teleportar GetSnakeLadder()
         {
             if (isSnake != null)
             {
@@ -65,6 +67,8 @@ namespace SnakesandLadder.Persistance.Repository
                 return null;
             }
         }
+
+        
     }
 }
 

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SnakesandLadder.Persistance
+namespace SnakesLadder.Persistance
 {
-    public class Game
+    public class Game : GameBase
     {
         private const int GAME_TYPE1 = 1;//vs Human
 
@@ -14,11 +14,6 @@ namespace SnakesandLadder.Persistance
 
 
         private Board board;
-
-
-        private Player[] players;
-
-
         private Player winner;
 
 
@@ -31,7 +26,7 @@ namespace SnakesandLadder.Persistance
         public Game(Board b, Dice d, int gameType)
         {
             this.dice = d;
-            this.papan = b;
+            this.board = b;
             if (gameType == GAME_TYPE1)
             {
                 players = new Player[] { new Player(0, "Player 1", false), new Player(0, "Player 2", false) };
@@ -80,13 +75,6 @@ namespace SnakesandLadder.Persistance
                 }
             }
         }
-
-
-        public void SetWinner(Player p)
-        {
-            this.winner = p;
-        }
-
 
         public Player GetWinner()
         {

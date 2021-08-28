@@ -2,15 +2,29 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SnakesandLadder.Persistance
+namespace SnakesLadder.Persistance
 {
-    class Player
+public class Player
     {
         private int position;
         private string name;
         private bool isComp;
         private int diceNum;
         private bool win;
+        private int pos;
+        private string playerName;
+        private bool compPlayer;
+
+        public Player(int pos, string playerName, bool compPlayer)
+        {
+            this.pos = pos;
+            this.playerName = playerName;
+            this.compPlayer = compPlayer;
+        }
+
+        public Player()
+        {
+        }
 
         public void SetPosition(int position)
         {
@@ -29,7 +43,7 @@ namespace SnakesandLadder.Persistance
             position = position + steps;
             if (this.position > 99)
             {
-                //jika melebihi dari finish
+                //if it exceeds the finish
                 int pos = this.position - 99;
                 this.position = 99 - pos;
             }
@@ -48,9 +62,9 @@ namespace SnakesandLadder.Persistance
 
         public bool IsWin()
         {
-            if (this.position == 99)
+            if (this.position == 100)
             {
-                //During finish
+                //check finish
                 this.win = true;
             }
             return this.win;
