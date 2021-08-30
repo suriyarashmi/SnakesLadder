@@ -6,9 +6,10 @@ using SnakesLadder.Persistance;
 
 namespace SnakesLadder.UnitTest
 {
+    //Test class
   public class DiceTest
     {
-      
+        //Test method
         [Theory]
         [InlineData(6)]
         public void RollDice_randomValue(int sides)

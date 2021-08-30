@@ -6,9 +6,10 @@ using SnakesLadder.Persistance;
 
 namespace SnakesLadder.UnitTest
 {
+    //Test class
     public class PlayerTest
     {
-
+        //Test method1
         [Fact]
         public void find_Position_To_Set()
         {
@@ -23,6 +24,7 @@ namespace SnakesLadder.UnitTest
             Assert.Equal(2,position);
         }
 
+        //Test method2
         [Fact]     
         public void Find_playername()
         {
@@ -36,7 +38,7 @@ namespace SnakesLadder.UnitTest
             Assert.Equal("Rashmi",playerName);
         }
         
-        
+        //Test method 3
         [Fact]
         public void Check_Move()
         {
