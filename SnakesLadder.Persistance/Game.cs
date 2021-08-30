@@ -55,21 +55,19 @@ namespace SnakesLadder.Persistance
             D = d;
         }
 
-        public Game()
-        {
-        }
+       
         ///<summary>
         /// Method to run snake and ladder game.
         ///</summary>
         public void RunGame()
         {
             // check player's position on board to move by rolling the dice
-            //and determine the new position.
+            //and determine the new position
             players[playingTurn].Move(this.dice);
             int pos = players[playingTurn].GetPosition();
 
             //check the player in that position
-            // find ladder or snake.
+            // find ladder or snake
             Teleportar snakeLadder = board.GetTile(pos).GetSnakeLadder();
             if (snakeLadder != null)
             {

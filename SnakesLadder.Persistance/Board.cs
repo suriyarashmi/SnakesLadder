@@ -53,13 +53,13 @@ namespace SnakesLadder.Persistance
         /// Method for generating board
         ///This method determines the position of the snake and ladder on the board
         ///</summary>
-        private void GenerateBoard()
+        public void GenerateBoard()
         {
             Random r = new Random();
             int count = 0;
             int start = 0;
             int end = 0;
-            while (count < 7)
+            while (count < 9) //ladder total 8
             {
                 start = r.Next(1, 100);
                 end = r.Next(1, 100);
@@ -73,7 +73,7 @@ namespace SnakesLadder.Persistance
                 }
             }
             count = start = end = 0;
-            while (count < 7)
+            while (count < 9) //snake total 8
             {
                 start = r.Next(1, 100);
                 end = r.Next(1, 100);
@@ -87,25 +87,26 @@ namespace SnakesLadder.Persistance
                 }
             }
 
-            ///<summary>
-            /// This method returns true if the snake or ladder does not exist in t1 and t2
-            /// false if the snake or ladder already exists in t1 and t2
-            /// </summary>
-            /// <param name="t1"> tile to check</param>
-            /// <param name="t2"> tile to check</param>
-            /// <returns>true if there is no snake or ladder, false if there is a snake or ladder</returns>
-            bool IsValidSnakeLadder(BoardPosition t1, BoardPosition t2)
-            {
-                if (t1.GetSnakeLadder() != null || t2.GetSnakeLadder() != null)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-            }
+        }
 
+
+        ///<summary>
+        /// This method returns true if the snake or ladder does not exist in t1 and t2
+        /// false if the snake or ladder already exists in t1 and t2
+        /// </summary>
+        /// <param name="t1"> tile to check</param>
+        /// <param name="t2"> tile to check</param>
+        /// <returns>true if there is no snake or ladder, false if there is a snake or ladder</returns>
+        private static bool IsValidSnakeLadder(BoardPosition t1, BoardPosition t2)
+        {
+            if (t1.GetSnakeLadder() != null || t2.GetSnakeLadder() != null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         /// <summary>
