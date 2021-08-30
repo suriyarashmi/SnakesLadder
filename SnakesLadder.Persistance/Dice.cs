@@ -16,6 +16,7 @@ namespace SnakesLadder.Persistance
             this.sides = 6;
         }
 
+        //generate random number by rolling dice
         public int RollDice()
         {
             Random r = new Random();

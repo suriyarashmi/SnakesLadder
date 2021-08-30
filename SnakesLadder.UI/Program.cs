@@ -19,7 +19,7 @@ namespace UI
                     Console.Write("{0}'s turn to move: ", current.GetName());
                     Console.ReadLine();
                 }
-                g.RunTheGame();
+                g.RunGame();
             }
         }
     }
