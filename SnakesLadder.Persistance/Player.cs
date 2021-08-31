@@ -17,6 +17,7 @@ namespace SnakesLadder.Persistance
         private int pos;
         private string playerName;
         private bool compPlayer;
+
         /// <summary>
         /// Constructor
         /// </summary>

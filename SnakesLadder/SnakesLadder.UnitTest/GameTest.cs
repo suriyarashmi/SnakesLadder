@@ -10,25 +10,54 @@ namespace SnakesLadder.UnitTest
     //Test Class
     public class GameTest
     {
-        Board b = new Board();
-        Dice d = new Dice();
-
-
-        //Test Method
-        [Theory]
-        [InlineData(1,1,null, null,null,null,2)]
-        public void start_game(int GAME_TYPE1, int turn, Board b, Dice d, Player[] players, Player winner, int totalPlayer)
+        //Test Method1       
+        public void check_winner()
         {
-            
+            var player = new Player();
             //Arrange            
-            var Turn = new Game();
+            var game = new Game();
 
             //Act
-           var actual =  Turn.GetCurrentTurn();
+            var actual = game.GetWinner();
+
+            //Assert
+            Assert.Equal(player, actual);
+        }
+
+        //Test Method2
+        [Theory]
+        [InlineData(1)]
+        public void Find_PlayerTurn( int turn)
+        {            
+            //Arrange            
+            var game = new Game();
+
+            //Act
+           var actual =  game.GetCurrentTurn();
 
             //Assert
             Assert.Equal(turn, actual);
         }
+     
+        //Test Method3
+        [Fact]
+        public void Check_WinnerName()
+        {
+            //Arrange
+            var player = new Player();
+            var expected = player.GetName();
+            var game = new Game();
+
+            //Act
+            var actual = game.GetWinnerInformation();
+
+            //Assert
+            Assert.Equal(expected,actual);
+        }
+
+
+
+
 
     }
 }

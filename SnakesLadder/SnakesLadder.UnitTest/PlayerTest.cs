@@ -73,5 +73,19 @@ namespace SnakesLadder.UnitTest
             Assert.True( win);
         }
 
+        [Fact]
+        public void Check_DiceNumber()
+        {
+            //Arrange
+            const int diceNum = 6;
+            var player = new Player();
+
+            //Act
+            var actual = player.GetDiceNum();
+
+            //Assert
+            Assert.Equal(diceNum, actual);
+        }
+
     }
 }
