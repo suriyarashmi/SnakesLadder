@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using SnakesLadder.Persistance;
+using Newtonsoft.Json;
 
 namespace SnakesLadder.UnitTest
 {
@@ -11,7 +12,7 @@ namespace SnakesLadder.UnitTest
     {
         //Test method1
         [Fact]
-        public void find_Position_To_Set()
+        public void Find_Position_To_SetBoardNumber()
         {
            //Arrange
            const int position = 2;
@@ -25,22 +26,24 @@ namespace SnakesLadder.UnitTest
         }
 
         //Test method2
-        [Fact]     
-        public void Find_playername()
+        [Theory]    
+        [InlineData(5,"Player 1", false)]
+        public void Find_playername_ReturnsPlayerName(int Pos, string PlayerName, bool CompPlayer)
         {
             //Arrange
-            var player = new Player();
-
+            Player player = new Player(Pos,PlayerName,CompPlayer);
+            var expected = PlayerName;
+              
             //Act
            string playerName =  player.GetName();
 
             //Assert
-            Assert.Equal("Rashmi",playerName);
+            Assert.Equal(expected,playerName);
         }
         
         //Test method 3
         [Fact]
-        public void Check_Move()
+        public void Check_Move_ReturnsPlayerPosition()
         {
             //Arrange
             int position = 0;
@@ -57,9 +60,9 @@ namespace SnakesLadder.UnitTest
             Assert.Equal(6, position);
         }
 
-
+        //Test method 4
         [Fact]
-        public void Check_player_Has_Won()
+        public void Check_player_Has_Won_ReturnsBool()
         {
             //Arrange
             const int position = 100;
@@ -73,8 +76,9 @@ namespace SnakesLadder.UnitTest
             Assert.True( win);
         }
 
+        //Test method 5
         [Fact]
-        public void Check_DiceNumber()
+        public void Check_DiceNumber_ReturnsDiceNumber()
         {
             //Arrange
             const int diceNum = 6;

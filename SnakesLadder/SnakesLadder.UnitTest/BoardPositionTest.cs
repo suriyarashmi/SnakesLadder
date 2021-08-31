@@ -12,7 +12,7 @@ namespace SnakesLadder.UnitTest
     {
         //Test method
         [Fact]
-        public void Find_BoardPosition()
+        public void Find_BoardPosition_ReturnsTileNumber()
         {
             //Arrange
             const int num = 5;

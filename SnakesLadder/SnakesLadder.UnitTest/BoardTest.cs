@@ -10,7 +10,7 @@ namespace SnakesLadder.UnitTest
     {
         [Theory]
         [InlineData(5)]
-        public void board_Position_check(int num)
+        public void board_Position_ReturnsTileNumber(int num)
         {
             //Arrange          
             var board = new Board();

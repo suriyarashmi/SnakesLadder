@@ -12,7 +12,7 @@ namespace SnakesLadder.UnitTest
         //Test method
         [Theory]
         [InlineData(6)]
-        public void RollDice_randomValue(int sides)
+        public void RollDice_ReturnsRandomValue(int sides)
         {
             //Arrange
             var dice = new Dice();
