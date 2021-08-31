@@ -55,7 +55,11 @@ namespace SnakesLadder.Persistance
             D = d;
         }
 
-       
+        public Game()
+        {
+        }
+
+
         ///<summary>
         /// Method to run snake and ladder game.
         ///</summary>
