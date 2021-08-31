@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SnakesandLadder.Persistance
+namespace SnakesLadder.Persistance
 {
     public class Dice
     {
@@ -16,6 +16,7 @@ namespace SnakesandLadder.Persistance
             this.sides = 6;
         }
 
+        //generate random number by rolling dice
         public int RollDice()
         {
             Random r = new Random();

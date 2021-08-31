@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.abstractions" Version="2.0.3" />
     <PackageReference Include="xunit.analyzers" Version="0.10.0" />
@@ -30,6 +31,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\SnakesLadder.Application\SnakesLadder.Application.csproj" />
+    <ProjectReference Include="..\..\SnakesLadder.Persistance\SnakesLadder.Persistance.csproj" />
   </ItemGroup>
 
 </Project>
