@@ -14,33 +14,36 @@ namespace SnakesLadder.UnitTest
         [Fact]
         public void Find_Position_To_SetBoardNumber()
         {
-           //Arrange
-           const int position = 2;
-           var player = new Player();
+            //Arrange
+            const int position = 2;
+            var player = new Player();
 
             //Act
             player.SetPosition(position);
 
             //Assert
-            Assert.Equal(2,position);
+            Assert.Equal(2, position);
         }
 
         //Test method2
-        [Theory]    
-        [InlineData(5,"Player 1", false)]
-        public void Find_playername_ReturnsPlayerName(int Pos, string PlayerName, bool CompPlayer)
+        [Fact]
+        public void Find_playername_ReturnsPlayerName()
         {
             //Arrange
-            Player player = new Player(Pos,PlayerName,CompPlayer);
+            const int Pos = 5;
+            string PlayerName = "Player 1";
+            bool CompPlayer = false;
+
+            Player player = new Player(Pos, PlayerName, CompPlayer);
             var expected = PlayerName;
-              
+
             //Act
-           string playerName =  player.GetName();
+            string playerName = player.GetName();
 
             //Assert
-            Assert.Equal(expected,playerName);
+            Assert.Equal(expected, playerName);
         }
-        
+
         //Test method 3
         [Fact]
         public void Check_Move_ReturnsPlayerPosition()
@@ -48,13 +51,13 @@ namespace SnakesLadder.UnitTest
             //Arrange
             int position = 0;
             var player = new Player();
-            
+
             int dice = 6;
             int steps = dice;
 
             //Act
             position = position + steps;
-          
+
 
             //Assert
             Assert.Equal(6, position);
@@ -66,14 +69,14 @@ namespace SnakesLadder.UnitTest
         {
             //Arrange
             const int position = 100;
-            bool win ;
+            bool win;
 
             //Act
             if (position == 100)
                 win = true;
 
             //Assert
-            Assert.True( win);
+            Assert.True(win);
         }
 
         //Test method 5
@@ -82,7 +85,10 @@ namespace SnakesLadder.UnitTest
         {
             //Arrange
             const int diceNum = 6;
+            const int sides = 6;
+            var dice = new Dice(sides);
             var player = new Player();
+            player.Move(dice);
 
             //Act
             var actual = player.GetDiceNum();
