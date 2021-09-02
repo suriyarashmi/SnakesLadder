@@ -7,12 +7,12 @@ using SnakesLadder.Persistance;
 namespace SnakesLadder.UnitTest
 {
     public class BoardTest
-    {
-        [Theory]
-        [InlineData(5)]
-        public void board_Position_ReturnsTileNumber(int num)
+    {        
+        [Fact]        
+        public void board_Position_ReturnsTileNumber()
         {
-            //Arrange          
+            //Arrange 
+            const int num = 5;                     
             var board = new Board();
 
             //Act

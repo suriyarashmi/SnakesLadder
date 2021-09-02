@@ -3,9 +3,9 @@ using System;
 
 namespace UI
 {
-    class Program
+   public class PlayGame
     {
-        static void Main(string[] args)
+       public static void Main(string[] args)
         {
             Board b = new Board();
             Player[] players = { new Player(0, "Player 1", false), new Player(0, "Player 2", true) };

@@ -1,0 +1,19 @@
+Play Snakes and Ladder game acceptance Criteria
+
+Stage: Play game
+
+Task: Play game and find winner name
+
+Type: Functionality
+
+Priority: Should Have
+
+Find between two players who reached Board Position to end square
+
+1. As a game user/Player, I have to provide my player details with board position , player name and computer or human player 
+
+2. Check which player reaches the end square on the board first by calling rungame method
+
+3. Get the current player's name to show on the console
+
+
