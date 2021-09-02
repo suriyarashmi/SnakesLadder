@@ -59,7 +59,7 @@ namespace SnakesLadder.Persistance
             int count = 0;
             int start = 0;
             int end = 0;
-            while (count < 9) //ladder total 8
+            while (count < 8) //ladder total 8
             {
                 start = r.Next(1, 100);
                 end = r.Next(1, 100);
@@ -73,7 +73,7 @@ namespace SnakesLadder.Persistance
                 }
             }
             count = start = end = 0;
-            while (count < 9) //snake total 8
+            while (count < 8) //snake total 8
             {
                 start = r.Next(1, 100);
                 end = r.Next(1, 100);
